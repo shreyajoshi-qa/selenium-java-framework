@@ -1,5 +1,6 @@
 package com.shreya.base;
 
+import com.shreya.config.ConfigReader;
 import org.openqa.selenium.WebDriver;
 import com.shreya.driver.DriverFactory;
 import org.testng.annotations.AfterMethod;
@@ -16,6 +17,7 @@ public class BaseTest {
         DriverFactory.initializeDriver();
 
         driver = DriverFactory.getDriver();
+        driver.get(ConfigReader.getProperty("url"));
         logger.info("Browser launched successfully");
 
     }
