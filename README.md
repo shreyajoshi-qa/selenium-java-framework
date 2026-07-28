@@ -2,19 +2,26 @@
 
 ## Tech Stack
 - Java 17
-- Selenium
+- Selenium 4
 - TestNG
 - Maven
+- Log4j2
+- Git & GitHub
 
-## Framework Structure
-- Base
-- Driver
-- Config
-- Tests
+## Framework Design
+- Page Object Model (POM)
+- DriverFactory
+- BaseTest
+- ConfigReader
+- WaitUtils
 
 ## Features
-- Page Object Model
-- Config Reader
-- Cross-browser support (coming soon)
-- Logging (coming soon)
-- Reporting (coming soon)
+- Cross-browser support (Chrome, Edge, Firefox)
+- Configurable browser from config.properties
+- Explicit Wait utility
+- Logging using Log4j2
+
+## How to Run
+1. Clone the repository
+2. Open in IntelliJ
+3. Run FirstTest.java
