@@ -2,6 +2,7 @@ package com.shreya.tests;
 
 import com.shreya.base.BaseTest;
 import com.shreya.pages.ActionsPage;
+import org.openqa.selenium.Alert;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,6 +13,7 @@ public class ActionsTest extends BaseTest {
         actionsPage.hoverOnFirstImage();
         String actual = actionsPage.getUserName();
         Assert.assertEquals(actual, "name: user1");
+
     }
 
 }

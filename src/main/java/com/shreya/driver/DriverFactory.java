@@ -7,6 +7,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.shreya.config.ConfigReader;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DriverFactory {
     private static final Logger logger = LogManager.getLogger(DriverFactory.class);
@@ -17,7 +20,19 @@ public class DriverFactory {
 
         if (browser.equalsIgnoreCase("chrome")) {
             logger.info("Launching Chrome browser");
-            driver = new ChromeDriver();
+
+            ChromeOptions options = new ChromeOptions();
+
+            Map<String, Object> prefs = new HashMap<>();
+
+            String downloadPath =
+                    System.getProperty("user.dir") + "\\downloads";
+
+            prefs.put("download.default_directory", downloadPath);
+
+            options.setExperimentalOption("prefs", prefs);
+
+            driver = new ChromeDriver(options);
         }
         else if (browser.equalsIgnoreCase("edge")) {
             logger.info("Launching Edge browser");

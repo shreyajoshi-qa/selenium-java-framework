@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.time.Duration;
 
 public class WaitUtils {
@@ -13,5 +14,42 @@ public class WaitUtils {
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
     }
+    public static File waitForFileDownload(
+            WebDriver driver,
+            String downloadPath,
+            File[] filesBefore) {
 
+        WebDriverWait wait =
+                new WebDriverWait(driver, Duration.ofSeconds(30));
+
+        return wait.until(d -> {
+
+            File downloadDir = new File(downloadPath);
+            File[] files = downloadDir.listFiles();
+
+            if (files != null) {
+
+                for (File file : files) {
+
+                    boolean isNewFile = true;
+
+                    for (File oldFile : filesBefore) {
+
+                        if (file.equals(oldFile)) {
+                            isNewFile = false;
+                            break;
+                        }
+                    }
+
+                    if (isNewFile &&
+                            !file.getName().endsWith(".crdownload")) {
+
+                        return file;
+                    }
+                }
+            }
+
+            return null;
+        });
+    }
 }

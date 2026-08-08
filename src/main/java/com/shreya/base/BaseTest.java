@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+
 public class BaseTest {
     private static final Logger logger = LogManager.getLogger(BaseTest.class);
     protected WebDriver driver;
@@ -15,7 +16,6 @@ public class BaseTest {
     public void setup() {
         logger.info("Initializing browser");
         DriverFactory.initializeDriver();
-
         driver = DriverFactory.getDriver();
         driver.get(ConfigReader.getProperty("url"));
         logger.info("Browser launched successfully");
