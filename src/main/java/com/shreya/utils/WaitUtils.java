@@ -1,4 +1,5 @@
 package com.shreya.utils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -51,5 +52,20 @@ public class WaitUtils {
 
             return null;
         });
+    }
+    public static Alert waitForAlert(WebDriver driver) {
+        WebDriverWait wait =
+                new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        return wait.until(ExpectedConditions.alertIsPresent());
+    }
+
+    public static void waitForInvisibility(WebDriver driver, By locator) {
+        WebDriverWait wait =
+                new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(
+                ExpectedConditions.invisibilityOfElementLocated(locator)
+        );
     }
 }
