@@ -15,7 +15,7 @@ public class JavaScriptAlertTest extends BaseTest {
         String actualText= javaScriptAlertPage.getAlertText();
         Assert.assertEquals(actualText,"I am a JS Alert");
         javaScriptAlertPage.acceptAlert();
-        javaScriptAlertPage.dismissAlert();
+        //javaScriptAlertPage.dismissAlert();
     }
     @Test
     public void javaScriptAlertConfirm(){

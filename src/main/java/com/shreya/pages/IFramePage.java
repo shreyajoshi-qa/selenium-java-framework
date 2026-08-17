@@ -21,14 +21,13 @@ public class IFramePage {
         driver.switchTo().frame(frame);
 
     }
-   /* public void enterText(String text) {
+    public void enterText(String text) {
         WaitUtils.waitForVisibility(driver, editorText);
 
         WebElement editor = driver.findElement(editorText);
 
-        editor.click();
         editor.sendKeys(text);
-    }*/
+    }
 
     public String getEditorText() {
         WaitUtils.waitForVisibility(driver, editorText);

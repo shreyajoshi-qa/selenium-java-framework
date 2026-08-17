@@ -10,7 +10,7 @@ public class IFrameTest extends BaseTest {
     public void IFrameSwitch(){
         IFramePage iFramePage=new IFramePage(driver);
         iFramePage.switchToEditorFrame();
-        //iFramePage.enterText("Hello Shreya!");
+        iFramePage.enterText("Hello Shreya!");
         String actualText = iFramePage.getEditorText();
         Assert.assertEquals(actualText, "Your content goes here.");
         iFramePage.switchToDefaultContent();

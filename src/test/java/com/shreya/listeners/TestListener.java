@@ -30,14 +30,19 @@ public class TestListener implements ITestListener {
         File screenshotFile =
                 takesScreenshot.getScreenshotAs(OutputType.FILE);
 
-        Path destination =
-                Paths.get("screenshots", "failed_test.png");
+        Path screenshotDirectory = Paths.get("screenshots");
 
         try {
+            Files.createDirectories(screenshotDirectory);
+
+            Path destination =
+                    screenshotDirectory.resolve("failed_test.png");
+
             Files.copy(
                     screenshotFile.toPath(),
                     destination
             );
+
         } catch (IOException e) {
             e.printStackTrace();
         }
