@@ -68,4 +68,13 @@ public class WaitUtils {
                 ExpectedConditions.invisibilityOfElementLocated(locator)
         );
     }
+    public static void waitForClickability(WebDriver driver, By locator) {
+
+        WebDriverWait wait =
+                new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        wait.until(
+                ExpectedConditions.elementToBeClickable(locator)
+        );
+    }
 }

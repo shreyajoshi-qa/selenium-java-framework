@@ -1,28 +1,28 @@
 package com.shreya.pages;
 
+import com.shreya.base.BasePage;
 import com.shreya.utils.WaitUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class JavaScriptAlertPage {
-    private WebDriver driver;
+public class JavaScriptAlertPage extends BasePage {
     private By jsAlertButton =By.xpath("//button[text()='Click for JS Alert']");
     private By jsConfirmButton=By.xpath("//button[text()='Click for JS Confirm']");
     private By jsPromtButton=By.xpath("//button[text()='Click for JS Prompt']");
     private By promptResult = By.id("result");
 
     public JavaScriptAlertPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
     public void clickJsAlert() {
-        driver.findElement(jsAlertButton).click();
+        click(jsAlertButton);
     }
     public void clickJSConfirm(){
-        driver.findElement(jsConfirmButton).click();
+        click(jsConfirmButton);
     }
     public void clickJSPrompt(){
-        driver.findElement(jsPromtButton).click();
+        click(jsPromtButton);
 
     }
     public void acceptAlert(){
@@ -35,7 +35,8 @@ public class JavaScriptAlertPage {
         return alert.getText();
     }
     public String getPromptResult(){
-        return driver.findElement(promptResult).getText();
+
+        return getText(promptResult);
     }
     public void dismissAlert(){
         Alert alert=WaitUtils.waitForAlert(driver);
