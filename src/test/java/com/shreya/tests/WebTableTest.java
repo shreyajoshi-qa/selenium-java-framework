@@ -20,12 +20,14 @@ public class WebTableTest extends BaseTest {
 
         Assert.assertEquals(dueAmount, "$50.00");
     }
+
     @Test
-    public void clickEditForSmith(){
+    public void clickEditForSmith() {
         WebTablePage page = new WebTablePage(driver);
         page.clickEditByLastName("Smith");
 
     }
+
     @Test
     public void verifyCompleteRowForSmith() {
 
@@ -39,6 +41,7 @@ public class WebTableTest extends BaseTest {
         Assert.assertEquals(rowData.get(1), "John");
         Assert.assertEquals(rowData.get(3), "$50.00");
     }
+
     @Test
     public void verifyCellValueDynamically() {
 
@@ -50,7 +53,7 @@ public class WebTableTest extends BaseTest {
     }
 
     @Test
-    public void verifySmith(){
+    public void verifySmith() {
         WebTablePage page = new WebTablePage(driver);
 
         List<String> rowData = page.getRowDataByLastName("Smith");
@@ -64,5 +67,22 @@ public class WebTableTest extends BaseTest {
         page.clickEditByLastName("Smith");
 
     }
-}
 
+    @Test
+    public void verifyAllLastNames() {
+        WebTablePage page = new WebTablePage(driver);
+        List<String> rowData = page.getAllLastNames();
+        System.out.println(rowData);
+        Assert.assertTrue(rowData.contains("Smith"));
+    }
+
+    @Test
+    public void verifyDueAmountCount() {
+        WebTablePage page =new WebTablePage(driver);
+        int count=page.getCountByDueAmount("$50.00");
+        System.out.println(count);
+        Assert.assertEquals(count,2);
+
+    }
+
+}

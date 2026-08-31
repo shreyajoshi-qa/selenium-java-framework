@@ -96,4 +96,35 @@ public class WebTablePage {
         return null;
     }
 
+
+    public List<String> getAllLastNames(){
+
+        List <String> lastnames=new ArrayList<>();
+        List<WebElement> rows=driver.findElements(tableRows);
+        for(WebElement row : rows){
+            List <WebElement> columns=row.findElements(By.tagName("td"));
+            String lastName=columns.get(0).getText();
+            lastnames.add(lastName);
+
+
+        }
+        return lastnames;
+
+
+    }
+
+    public int getCountByDueAmount(String amount) {
+        int count=0;
+        List<WebElement> rows = driver.findElements(tableRows);
+        for (WebElement row : rows) {
+            List <WebElement> columns=row.findElements(By.tagName("td"));
+            String dueAmount = columns.get(3).getText();
+            if (dueAmount.equals(amount)) {
+                count++;
+
+            }
+        }
+        return count;
+    }
+
 }
