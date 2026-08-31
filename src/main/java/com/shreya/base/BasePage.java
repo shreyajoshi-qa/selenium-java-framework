@@ -4,6 +4,8 @@ import com.shreya.utils.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class BasePage {
     protected WebDriver driver;
@@ -43,5 +45,22 @@ public class BasePage {
         WaitUtils.waitForVisibility(driver, locator);
         driver.findElement(locator).sendKeys(Keys.ENTER);
     }
+    protected void selectByValue(By locator, String value) {
+        WaitUtils.waitForVisibility(driver, locator);
+        WebElement dropdownElement = driver.findElement(locator);
+
+        Select select = new Select(dropdownElement);
+
+        select.selectByValue(value);
+
 
     }
+    protected String getSelectedOption(By locator) {
+
+        WaitUtils.waitForVisibility(driver, locator);
+        WebElement dropdownElement = driver.findElement(locator);
+        Select select = new Select(dropdownElement);
+        return select.getFirstSelectedOption().getText();
+    }
+
+}
