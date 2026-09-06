@@ -1,9 +1,7 @@
 package com.shreya.utils;
 
 import org.openqa.selenium.Alert;
-import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
-
 
 public class AlertUtils {
 
@@ -17,9 +15,8 @@ public class AlertUtils {
         alert.accept();
     }
 
-    public static void dismissAlert(WebDriver driver){
+    public static void dismissAlert(WebDriver driver) {
         Alert alert = driver.switchTo().alert();
         alert.dismiss();
-
     }
 }

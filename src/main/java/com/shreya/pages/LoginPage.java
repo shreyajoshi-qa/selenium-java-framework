@@ -1,9 +1,7 @@
 package com.shreya.pages;
 import com.shreya.base.BasePage;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
-import com.shreya.utils.WaitUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -2,7 +2,6 @@ package com.shreya.tests;
 
 import com.shreya.base.BaseTest;
 import com.shreya.pages.JavaScriptAlertPage;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

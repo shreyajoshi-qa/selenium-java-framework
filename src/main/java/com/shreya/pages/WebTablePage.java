@@ -37,9 +37,9 @@ public class WebTablePage {
         return null;
     }
     public void clickEditByLastName(String lastName){
-        List <WebElement> rows=driver.findElements(tableRows);
+        List <WebElement> rows= driver.findElements(tableRows);
         for(WebElement row :rows){
-            List <WebElement> columns=driver.findElements(By.tagName("td"));
+            List <WebElement> columns= driver.findElements(By.tagName("td"));
 
             if(!columns.isEmpty()){
                  String currentLastName=columns.get(0).getText();
@@ -100,7 +100,7 @@ public class WebTablePage {
     public List<String> getAllLastNames(){
 
         List <String> lastnames=new ArrayList<>();
-        List<WebElement> rows=driver.findElements(tableRows);
+        List<WebElement> rows= driver.findElements(tableRows);
         for(WebElement row : rows){
             List <WebElement> columns=row.findElements(By.tagName("td"));
             String lastName=columns.get(0).getText();

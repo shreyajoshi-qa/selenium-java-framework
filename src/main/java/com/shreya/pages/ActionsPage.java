@@ -3,7 +3,6 @@ package com.shreya.pages;
 import com.shreya.utils.WaitUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class ActionsPage {

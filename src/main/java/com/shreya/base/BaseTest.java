@@ -24,10 +24,7 @@ public class BaseTest {
     @AfterMethod
     public void tearDown() {
         logger.info("Closing browser");
-        if (driver != null) {
-            driver.quit();
-        }
-
+        DriverFactory.quitDriver();
     }
     public WebDriver getDriver() {
         return driver;

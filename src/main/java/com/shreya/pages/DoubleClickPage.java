@@ -15,7 +15,7 @@ public class DoubleClickPage {
     public void doubleClickOnButton(){
         WaitUtils.waitForVisibility(driver, doubleClickButton);
         Actions actions = new Actions(driver);
-        WebElement button=driver.findElement(doubleClickButton);
+        WebElement button= driver.findElement(doubleClickButton);
         actions.doubleClick(button).perform();
 
     }

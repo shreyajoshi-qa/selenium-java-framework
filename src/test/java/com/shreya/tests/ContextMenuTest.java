@@ -1,11 +1,8 @@
 package com.shreya.tests;
 
 import com.shreya.base.BaseTest;
-import com.shreya.pages.ActionsPage;
 import com.shreya.pages.ContextMenuPage;
 import com.shreya.utils.AlertUtils;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

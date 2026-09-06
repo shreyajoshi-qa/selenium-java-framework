@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class JavaScriptExecutorPage {
     private WebDriver driver;
@@ -17,7 +16,7 @@ public class JavaScriptExecutorPage {
     }
     public void scrollToLoginButton(){
         WaitUtils.waitForVisibility(driver,loginButton );
-        WebElement loginButtonElement=driver.findElement(loginButton);
+        WebElement loginButtonElement= driver.findElement(loginButton);
         JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript(
                 "arguments[0].scrollIntoView(true);",
@@ -26,7 +25,7 @@ public class JavaScriptExecutorPage {
     }
     public void clickUsingJS(){
         WaitUtils.waitForVisibility(driver,click );
-        WebElement loginButtonElement=driver.findElement(click);
+        WebElement loginButtonElement= driver.findElement(click);
         JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", loginButtonElement);
 

@@ -1,9 +1,7 @@
 package com.shreya.tests;
 
 import com.shreya.base.BaseTest;
-import com.shreya.pages.LoginPage;
 import com.shreya.pages.WebTablePage;
-import com.shreya.utils.AlertUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
