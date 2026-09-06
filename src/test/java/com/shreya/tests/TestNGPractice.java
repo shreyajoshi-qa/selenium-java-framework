@@ -98,5 +98,13 @@ public class TestNGPractice {
         System.out.println("After Suite");
     }
 */
+    @Parameters({"browser", "environment"})
+    @Test
+    public void environmentTest(
+            @Optional("chrome") String browser,
+            String environment) {
 
+        System.out.println("Browser: " + browser);
+        System.out.println("Environment: " + environment);
+    }
 }

@@ -2,13 +2,10 @@
 
 <suite name="Automation Suite">
 
-    <test name="Smoke Tests">
+    <test name="TestNG Practice">
 
-        <groups>
-            <run>
-                <exclude name="regression"/>
-            </run>
-        </groups>
+        <parameter name="environment" value="qa"/>
+
 
         <classes>
             <class name="com.shreya.tests.TestNGPractice"/>
